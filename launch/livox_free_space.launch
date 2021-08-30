@@ -1,0 +1,8 @@
+<launch>
+
+    <param name = "height_offset" type="double" value="1.8"/>
+    <node pkg="livox_free_space" name="livox_free_space" type="livox_free_space_node" output="screen"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find livox_free_space)/fs.rviz" />
+
+</launch>
+<!-- launch-prefix="gdb -ex run - -args" -->
