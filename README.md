@@ -24,7 +24,7 @@ Free space is marked in red.
 cd ~/your_workspace/src
 git clone https://github.com/Livox-SDK/livox_free_space
 cd ..
-catkim_make
+catkin_make
 ```
 
 ## Run with Bag File
@@ -45,11 +45,15 @@ roslaunch livox_free_space livox_free_space.launch
 ```
 cd ~/catkin_ws
 source devel/setup.bash
-roslaunch livox_ros_driver livox_lidar_msg.launch
+roslaunch livox_ros_driver livox_lidar.launch
+```
+- Change the topic name in src/FreeSpace_node.cpp from`/points_raw` to `/livox/lidar`. And then catkin make this package:
+```
+cd ~/your_workspace
+catkin_make
 ```
 - Run the launch file:
 ```
-cd ~/your_workspace
 source devel/setup.bash
 roslaunch livox_free_space livox_free_space.launch
 ```
